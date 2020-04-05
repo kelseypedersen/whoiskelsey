@@ -1,1 +1,65 @@
-KEG TALK
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Who is Kelsey?</title>
+    <meta property="og:title" content="Who is Kelsey? 🔎">
+    <meta property="og:description" content="Austin, TX">
+    <meta property="og:image" content="https://whoiskelsey.com/kelsey.png">
+    <meta property="og:url" content="https://whoiskelsey.com">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Kelsey Pedersen</h1>
+        <p>Loves tacos, traveling and visiting murals</p>
+      </div>
+      <div class="row">
+        <img id="imgBanner" src="kelsey.png" height="400px">
+      </div>
+      <div class="row">
+        <h2>Who rocked the Nashville mural best, fall 2019?</h2>
+        <p>Kelsey vs. Taylor Swift</p>
+      </div>
+    </div>
+
+<style>
+  body{
+    font-family: Arial;
+  }
+  .container .row{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+  }
+  .row{
+    margin: 10px; 
+  }
+</style>
+
+<script type="text/javascript">
+            var picPaths = ['kelsey.png','taylor-swift.png'];
+            var curPic = -1;
+            //preload the images for smooth animation
+            var imgO = new Array();
+            for(i=0; i < picPaths.length; i++) {
+                imgO[i] = new Image();
+                imgO[i].src = picPaths[i];
+            }
+
+            function swapImage() {
+                curPic = (++curPic > picPaths.length-1)? 0 : curPic;
+                imgCont.src = imgO[curPic].src;
+                setTimeout(swapImage,3000);
+            }
+
+            window.onload=function() {
+                imgCont = document.getElementById('imgBanner');
+                swapImage();
+            }
+    </script>
+  </body>
+</html>
